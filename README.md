@@ -1,4 +1,4 @@
-## <img src="src/assets/brand/favicon.ico" width="24" height="24" alt="rescript logo"> ReScript-React Webpack Template
+## <img src="public/brand/favicon.ico" width="24" height="24" alt="rescript logo"> ReScript-React Webpack Template
 
 A ReScript-React Webpack Template with TailwindCSS
 
