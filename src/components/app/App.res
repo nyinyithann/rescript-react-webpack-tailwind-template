@@ -5,7 +5,7 @@ module ReLogo = {
   external make: {..} => React.element = "default"
 }
 
-module Media = {
+module Greeting = {
   @react.component
   let make = () => {
     <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
@@ -20,5 +20,5 @@ module Media = {
 
 @react.component
 let make = () => {
-  <div> <Media /> </div>
+  <div> <Greeting /> </div>
 }
