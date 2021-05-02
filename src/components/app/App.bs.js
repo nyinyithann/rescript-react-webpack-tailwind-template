@@ -13,7 +13,7 @@ var ReLogo = {
   make: make
 };
 
-function App$Media(Props) {
+function App$Greeting(Props) {
   return React.createElement("div", {
               className: "p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
             }, React.createElement("div", {
@@ -27,12 +27,12 @@ function App$Media(Props) {
                     }, "Welcome to ReScript")));
 }
 
-var Media = {
-  make: App$Media
+var Greeting = {
+  make: App$Greeting
 };
 
 function App(Props) {
-  return React.createElement("div", undefined, React.createElement(App$Media, {}));
+  return React.createElement("div", undefined, React.createElement(App$Greeting, {}));
 }
 
 var make$1 = App;
@@ -40,7 +40,7 @@ var make$1 = App;
 export {
   string ,
   ReLogo ,
-  Media ,
+  Greeting ,
   make$1 as make,
   
 }
