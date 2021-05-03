@@ -49,7 +49,7 @@
     "stylelint": "stylelint --config .stylelintrc.json --fix 'src/*.css' 'src/**/*.css' ",
     "build:prod": "bsb -clean-world && bsb -make-world && webpack --config build/webpack.js --env env=prod",
     "build:dev": "bsb -clean-world && bsb -make-world && webpack --config build/webpack.js --env env=dev",
-    "start": "webpack serve --config build/webpack.js --env env=dev",
+    "start": "NODE_ENV=development webpack serve --config build/webpack.js --env env=dev",
     "res:start": "bsb -make-world -w",
     "res:build": "bsb -clean-world -make-world",
     "res:clean": "bsb -clean-world"
