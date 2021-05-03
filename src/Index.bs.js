@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import * as App$RescriptReactWebpackTailwindTemplate from "./components/app/App.bs.js";
+import * as App$RescriptReactWebpackTailwindTemplate from "./components/App.bs.js";
 
 import '../style/main.css'
 ;
