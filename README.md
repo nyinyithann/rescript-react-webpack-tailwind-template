@@ -5,7 +5,7 @@ A ReScript-React Webpack Template with TailwindCSS
 ### Installation
 
 - `git clone https://github.com/nyinyithann/rescript-react-webpack-tailwind-template.git`
-- `cd rescript-react-webpack-template`
+- `cd rescript-react-webpack-tailwind-template`
 - `yarn install`
 - `yarn res:start`
 - `yarn start`
