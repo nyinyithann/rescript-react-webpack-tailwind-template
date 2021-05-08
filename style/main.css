@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 @import './_theme.css';
 @import "./_fonts.css";
 
-@tailwind utilities;
+@layer components {
+	.theme-btn {
+		@apply p-1 rounded-full h-6 w-6 flex items-center justify-center ring-1 focus:ring-2 hover:ring-2 focus:outline-none;
+	}
+}

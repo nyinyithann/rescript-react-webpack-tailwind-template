@@ -4,5 +4,5 @@ let {querySelector, render} = module(ReactDOM)
 
 switch querySelector("#react") {
 | None => ()
-| Some(root) => render(<App />, root)
+| Some(root) => render(<React.StrictMode> <App /> </React.StrictMode>, root)
 }

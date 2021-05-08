@@ -10,8 +10,10 @@ import '../style/main.css'
 var root = document.querySelector("#react");
 
 if (!(root == null)) {
-  var prim = React.createElement(App$RescriptReactWebpackTailwindTemplate.make, {});
-  ReactDom.render(prim, root);
+  var prim0 = React.createElement(React.StrictMode, {
+        children: React.createElement(App$RescriptReactWebpackTailwindTemplate.make, {})
+      });
+  ReactDom.render(prim0, root);
 }
 
 export {

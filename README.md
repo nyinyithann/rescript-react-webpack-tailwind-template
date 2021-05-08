@@ -1,13 +1,14 @@
-## <img src="public/brand/favicon.ico" width="24" height="24" alt="rescript logo"> ReScript-React Webpack Template
+## <img src="public/brand/favicon.ico" width="24" height="24" alt="rescript logo"> ReScript-React Webpack Template with Tailwind
 
-A ReScript-React Webpack Template with TailwindCSS
+Opinionated Boilerplate for ReScript-React with Webpack and TailwindCSS
+
 
 ### Installation
 
 - `git clone https://github.com/nyinyithann/rescript-react-webpack-tailwind-template.git`
 - `cd rescript-react-webpack-tailwind-template`
 - `yarn install`
-- `yarn res:start`
+- `yarn watch:res`
 - `yarn start`
 - visit http://0.0.0.0:8080
 
