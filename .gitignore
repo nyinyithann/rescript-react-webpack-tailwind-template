@@ -11,3 +11,4 @@ nohup.out
 /lib/
 .bsb.lock
 .merlin
+package-lock.json
