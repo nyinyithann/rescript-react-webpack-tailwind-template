@@ -2,6 +2,8 @@
 
 Opinionated Boilerplate for ReScript-React with Webpack and TailwindCSS
 
+[DEMO](https://rescript-react-webpack-tailwind-template.vercel.app/
+)
 
 ### Installation
 
