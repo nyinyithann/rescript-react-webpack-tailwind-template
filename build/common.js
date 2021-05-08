@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isProductionMode = process.env.NODE_ENV === 'production';
 
@@ -85,6 +86,14 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: isProductionMode ? '[name].[contenthash].css' : '[name].css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '..', './public/brand/favicon.ico'),
+          to: path.resolve(__dirname, '..', './dist/favicon.ico'),
+        },
+      ],
     }),
   ],
 };
