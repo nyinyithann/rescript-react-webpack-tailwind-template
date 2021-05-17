@@ -2,7 +2,10 @@
 
 import * as Curry from "rescript/lib/es6/curry.js";
 import * as React from "react";
-import RescriptBrandmarkSvg from "../../public/brand/rescript-brandmark.svg";
+import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.bs.js";
+import * as About$RescriptReactWebpackTailwindTemplate from "./About.bs.js";
+import * as NavBar$RescriptReactWebpackTailwindTemplate from "./NavBar.bs.js";
+import * as Greeting$RescriptReactWebpackTailwindTemplate from "./Greeting.bs.js";
 
 function string(prim) {
   return prim;
@@ -14,125 +17,37 @@ function useState(prim) {
             });
 }
 
-var make = RescriptBrandmarkSvg;
-
-var ReLogo = {
-  make: make
-};
-
-function App$Greeting(Props) {
-  return React.createElement("div", {
-              className: "p-6 max-w-sm mx-auto bg-primary_500 rounded-xl shadow-md flex items-center space-x-4"
-            }, React.createElement("div", {
-                  className: "flex-shrink-0"
-                }, React.createElement("div", {
-                      className: "h-8 w-8"
-                    }, React.createElement(make, {}))), React.createElement("div", undefined, React.createElement("div", {
-                      className: "text-xl font-medium text-primary_100"
-                    }, "Hello"), React.createElement("p", {
-                      className: "text-primary_200"
-                    }, "Welcome to ReScript")));
-}
-
-var Greeting = {
-  make: App$Greeting
-};
-
 function App(Props) {
-  var match = React.useState(function () {
+  var url = RescriptReactRouter.useUrl(undefined, undefined);
+  var match = url.path;
+  var component;
+  var exit = 0;
+  if (match && match.hd === "about" && !match.tl) {
+    component = React.createElement(About$RescriptReactWebpackTailwindTemplate.make, {});
+  } else {
+    exit = 1;
+  }
+  if (exit === 1) {
+    component = React.createElement(Greeting$RescriptReactWebpackTailwindTemplate.make, {});
+  }
+  var match$1 = React.useState(function () {
         return "theme-gray";
       });
-  var setTheme = match[1];
   return React.createElement("div", {
-              className: match[0]
-            }, React.createElement("nav", {
-                  className: "bg-primary_500 fixed inset-x-0 shadow"
-                }, React.createElement("div", {
-                      className: "max-w-6xl mx-auto px-4"
-                    }, React.createElement("div", {
-                          className: "flex justify-between"
-                        }, React.createElement("div", {
-                              className: "flex space-x-2"
-                            }, React.createElement("div", {
-                                  className: " pt-3 px-3 h-12 w-12"
-                                }, React.createElement(make, {})), React.createElement("div", {
-                                  className: "flex items-center text-primary_200 "
-                                }, React.createElement("a", {
-                                      className: "py-5 px-3 hover:text-primary_100",
-                                      href: "#"
-                                    }, "Home"), React.createElement("a", {
-                                      className: "py-5 px-3 hover:text-primary_100",
-                                      href: "#"
-                                    }, "About"))), React.createElement("div", {
-                              className: "hidden sm:flex items-center space-x-2"
-                            }, React.createElement("button", {
-                                  className: "theme-btn",
-                                  style: {
-                                    background: "#6B7280"
-                                  },
-                                  type: "button",
-                                  onClick: (function (param) {
-                                      return Curry._1(setTheme, (function (param) {
-                                                    return "theme-gray";
-                                                  }));
-                                    })
-                                }), React.createElement("button", {
-                                  className: "theme-btn",
-                                  style: {
-                                    background: "#EF4444"
-                                  },
-                                  type: "button",
-                                  onClick: (function (param) {
-                                      return Curry._1(setTheme, (function (param) {
-                                                    return "theme-red";
-                                                  }));
-                                    })
-                                }), React.createElement("button", {
-                                  className: "theme-btn",
-                                  style: {
-                                    background: "#3B82F6"
-                                  },
-                                  type: "button",
-                                  onClick: (function (param) {
-                                      return Curry._1(setTheme, (function (param) {
-                                                    return "theme-blue";
-                                                  }));
-                                    })
-                                }), React.createElement("button", {
-                                  className: "theme-btn",
-                                  style: {
-                                    background: "#F59E0B"
-                                  },
-                                  type: "button",
-                                  onClick: (function (param) {
-                                      return Curry._1(setTheme, (function (param) {
-                                                    return "theme-yellow";
-                                                  }));
-                                    })
-                                }), React.createElement("button", {
-                                  className: "theme-btn",
-                                  style: {
-                                    background: "#10B981"
-                                  },
-                                  type: "button",
-                                  onClick: (function (param) {
-                                      return Curry._1(setTheme, (function (param) {
-                                                    return "theme-green";
-                                                  }));
-                                    })
-                                }))))), React.createElement("div", {
-                  className: "py-32 bg-primary_50 h-screen p-3"
-                }, React.createElement(App$Greeting, {})));
+              className: "" + match$1[0] + " flex flex-col"
+            }, React.createElement(NavBar$RescriptReactWebpackTailwindTemplate.make, {
+                  setTheme: match$1[1]
+                }), React.createElement("div", {
+                  className: "py-20 bg-primary_50 h-screen p-3"
+                }, component));
 }
 
-var make$1 = App;
+var make = App;
 
 export {
   string ,
   useState ,
-  ReLogo ,
-  Greeting ,
-  make$1 as make,
+  make ,
   
 }
-/* make Not a pure module */
+/* react Not a pure module */
