@@ -10,11 +10,6 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
-    watchContentBase: true,
-    compress: false,
-    disableHostCheck: true,
-    quiet: false,
     hot: true,
     open: true,
     host: '0.0.0.0',

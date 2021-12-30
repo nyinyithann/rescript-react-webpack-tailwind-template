@@ -44,9 +44,6 @@ module.exports = {
               : 'style-loader',
             options: {
               esModule: true,
-              modules: {
-                namedExport: true,
-              },
             },
           },
           {
@@ -77,8 +74,8 @@ module.exports = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: 'ReScript-React TailwindCSS Template',
-      favicon: path.resolve(__dirname, '..', './public/brand/favicon.ico'),
-      template: path.resolve(__dirname, '..', './src/index.html'),
+      favicon: path.resolve(__dirname, '..', './public/favicon.ico'),
+      template: path.resolve(__dirname, '..', './public/index.html'),
       hash: true,
       scriptLoading: 'defer',
       inject: 'head', // head better for extension
@@ -90,8 +87,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '..', './public/brand/favicon.ico'),
-          to: path.resolve(__dirname, '..', './dist/favicon.ico'),
+          from: path.resolve(__dirname, '..', './public/manifest.json'),
+          to: path.resolve(__dirname, '..', './dist/manifest.json'),
         },
       ],
     }),

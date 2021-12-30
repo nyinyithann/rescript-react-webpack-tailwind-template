@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @import './_theme.css';
-@import "./_fonts.css";
+@import './_fonts.css';
 
 @layer components {
-	.theme-btn {
-		@apply p-1 rounded-full h-6 w-6 flex items-center justify-center ring-1 focus:ring-2 hover:ring-2 focus:outline-none;
-	}
+  .navbar-button {
+    @apply h-8 mx-1 px-2 rounded text-center transition-colors duration-200 text-primary_900 hover:cursor-pointer focus:outline-none hover:bg-primary_600 hover:text-primary_50;
+  }
 }

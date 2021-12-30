@@ -2,7 +2,7 @@
 %%raw(`import '../style/main.css'`)
 let {querySelector, render} = module(ReactDOM)
 
-switch querySelector("#react") {
+switch querySelector("#root") {
 | None => ()
 | Some(root) => render(<React.StrictMode> <App /> </React.StrictMode>, root)
 }
