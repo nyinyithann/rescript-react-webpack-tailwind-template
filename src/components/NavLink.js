@@ -22,10 +22,13 @@ function NavLink(Props) {
   }
   var className$1 = Js_option.getWithDefault("", className);
   var className$2 = path === to ? "" + className$1 + " text-primary_50 bg-primary_600 dark:bg-slate-500" : className$1;
-  return React.createElement("a", {
+  return React.createElement("button", {
               className: className$2,
-              role: "button",
-              href: to
+              type: "button",
+              onClick: (function (e) {
+                  e.preventDefault();
+                  return RescriptReactRouter.push(to);
+                })
             }, children);
 }
 

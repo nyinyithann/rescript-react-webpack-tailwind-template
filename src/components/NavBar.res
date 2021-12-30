@@ -9,7 +9,7 @@ let make = () => {
       <div className="flex items-center justify-between">
         <div className="flex space-x-2 items-center">
           <div
-            className="flex items-center justify-center px-1 h-9 w-9
+            className="flex shrink-0 items-center justify-center h-8 w-8
             rounded-full shadow-md shadow-primary_400 dark:bg-slate-400">
             {<Logo fillColor="var(--color-primary-600)" />}
           </div>

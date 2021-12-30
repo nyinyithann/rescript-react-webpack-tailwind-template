@@ -19,7 +19,7 @@ function NavBar(Props) {
                     }, React.createElement("div", {
                           className: "flex space-x-2 items-center"
                         }, React.createElement("div", {
-                              className: "flex items-center justify-center px-1 h-9 w-9\n            rounded-full shadow-md shadow-primary_400 dark:bg-slate-400"
+                              className: "flex shrink-0 items-center justify-center h-8 w-8\n            rounded-full shadow-md shadow-primary_400 dark:bg-slate-400"
                             }, React.createElement(Logo.make, {
                                   fillColor: "var(--color-primary-600)"
                                 })), React.createElement("div", {

@@ -10,5 +10,13 @@ let make = (~to, ~children, ~className=?) => {
   let className = Js.Option.getWithDefault("", className)
   let className =
     path == to ? j`$className text-primary_50 bg-primary_600 dark:bg-slate-500` : className
-  <a href=to className role="button"> {children} </a>
+  <button
+    type_="button"
+    className
+    onClick={e => {
+      ReactEvent.Mouse.preventDefault(e)
+      RescriptReactRouter.push(to)
+    }}>
+    {children}
+  </button>
 }
