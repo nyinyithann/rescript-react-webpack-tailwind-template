@@ -10,7 +10,6 @@ function string(prim) {
 }
 
 function NavBar(Props) {
-  var setTheme = Props.setTheme;
   return React.createElement("nav", {
               className: "fixed inset-x-0 z-50 flex-1 py-1 shadow bg-primary_300 md:pt-1\n    shadow-primary_200 dark:bg-slate-600 dark:text-white"
             }, React.createElement("div", {
@@ -39,9 +38,7 @@ function NavBar(Props) {
                                   className: "navbar-button"
                                 }))), React.createElement("div", {
                           className: "relative flex items-center pr-1 space-x-2"
-                        }, React.createElement(ThemeMenu.make, {
-                              setTheme: setTheme
-                            })))));
+                        }, React.createElement(ThemeMenu.make, {})))));
 }
 
 var make = NavBar;

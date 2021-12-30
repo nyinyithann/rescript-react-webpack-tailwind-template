@@ -8,6 +8,7 @@ import * as NavBar from "./components/NavBar.js";
 import * as NotFound from "./pages/NotFound.js";
 import * as ThemeHook from "./hooks/ThemeHook.js";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.js";
+import * as ThemeSwitchProvider from "./providers/ThemeSwitchProvider.js";
 
 function string(prim) {
   return prim;
@@ -27,14 +28,15 @@ function App(Props) {
           match.tl ? React.createElement(NotFound.make, {}) : React.createElement(About.make, {})
         ) : React.createElement(NotFound.make, {})
     ) : React.createElement(Home.make, {});
-  var match$1 = ThemeHook.useTheme("ReScriptReactTemplate_Theme", "theme-green");
-  return React.createElement("div", {
-              className: "" + match$1[0] + " flex flex-col"
-            }, React.createElement(NavBar.make, {
-                  setTheme: match$1[1]
-                }), React.createElement("div", {
-                  className: "py-20 bg-white h-screen p-3"
-                }, component));
+  var match$1 = ThemeHook.useTheme("theme-slate");
+  return React.createElement(ThemeSwitchProvider.make, {
+              value: match$1[1],
+              children: React.createElement("div", {
+                    className: "" + match$1[0] + " flex flex-col"
+                  }, React.createElement(NavBar.make, {}), React.createElement("div", {
+                        className: "py-20 bg-white h-screen p-3"
+                      }, component))
+            });
 }
 
 var make = App;

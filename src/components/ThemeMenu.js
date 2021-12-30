@@ -4,6 +4,7 @@ import * as Curry from "rescript/lib/es6/curry.js";
 import * as React from "react";
 import * as Belt_Array from "rescript/lib/es6/belt_Array.js";
 import * as React$1 from "@headlessui/react";
+import * as ThemeSwitchProvider from "../providers/ThemeSwitchProvider.js";
 import * as Solid from "@heroicons/react/solid";
 
 function string(prim) {
@@ -139,7 +140,7 @@ var themeList = [
 ];
 
 function ThemeMenu(Props) {
-  var setTheme = Props.setTheme;
+  var setTheme = React.useContext(ThemeSwitchProvider.themeSwitchContext);
   var clickHandler = React.useCallback((function (e) {
           e.preventDefault();
           return Curry._1(setTheme, e.target.getAttribute("data-theme"));

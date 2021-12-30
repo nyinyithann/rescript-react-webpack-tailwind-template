@@ -1,7 +1,7 @@
 let {string} = module(React)
 
 @react.component
-let make = (~setTheme) => {
+let make = () => {
   <nav
     className="fixed inset-x-0 z-50 flex-1 py-1 shadow bg-primary_300 md:pt-1
     shadow-primary_200 dark:bg-slate-600 dark:text-white">
@@ -26,7 +26,7 @@ let make = (~setTheme) => {
             </NavLink>
           </div>
         </div>
-        <div className="relative flex items-center pr-1 space-x-2"> <ThemeMenu setTheme /> </div>
+        <div className="relative flex items-center pr-1 space-x-2"> <ThemeMenu /> </div>
       </div>
     </div>
   </nav>

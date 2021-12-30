@@ -58,7 +58,9 @@ let themeList = [
 ]
 
 @react.component
-let make = (~setTheme) => {
+let make = () => {
+  let setTheme = React.useContext(ThemeSwitchProvider.themeSwitchContext)
+
   let clickHandler = React.useCallback1(e => {
     open ReactEvent.Mouse
     preventDefault(e)

@@ -5,32 +5,28 @@ import * as React from "react";
 import * as Js_exn from "rescript/lib/es6/js_exn.js";
 import * as Caml_js_exceptions from "rescript/lib/es6/caml_js_exceptions.js";
 
-function useState(prim) {
-  return React.useState(function () {
-              return Curry._1(prim, undefined);
-            });
-}
+var themeKey = "RescriptTailwindTemplate_Theme";
 
-function useTheme(key, initialValue) {
+function useTheme(defaultTheme) {
   var match = React.useState(function () {
         try {
-          var v = localStorage.getItem(key);
-          if (v == null) {
-            return initialValue;
-          } else {
+          var v = localStorage.getItem(themeKey);
+          if (v !== null) {
             return v;
+          } else {
+            return defaultTheme;
           }
         }
         catch (exn){
-          return initialValue;
+          return defaultTheme;
         }
       });
-  var setStoredValue = match[1];
-  var setValue = function (value) {
+  var setStoredTheme = match[1];
+  var setTheme = function (themeName) {
     try {
-      localStorage.setItem(key, value);
-      Curry._1(setStoredValue, (function (_prev) {
-              return value;
+      localStorage.setItem(themeKey, themeName);
+      Curry._1(setStoredTheme, (function (_prev) {
+              return themeName;
             }));
       return ;
     }
@@ -50,12 +46,12 @@ function useTheme(key, initialValue) {
   };
   return [
           match[0],
-          setValue
+          setTheme
         ];
 }
 
 export {
-  useState ,
+  themeKey ,
   useTheme ,
   
 }

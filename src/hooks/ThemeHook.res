@@ -1,21 +1,22 @@
-let {useState} = module(React)
+let themeKey = "RescriptTailwindTemplate_Theme"
 
-let useTheme = (key: string, initialValue: string) => {
-  let (storedValue, setStoredValue) = useState(_ => {
+let useTheme = defaultTheme => {
+  open Dom.Storage2
+  let (storedTheme, setStoredTheme) = React.useState(_ => {
     try {
-      switch WebApi.LocalStorage.getItem(key) {
+      switch localStorage->getItem(themeKey) {
       | Some(v) => v
-      | None => initialValue
+      | None => defaultTheme
       }
     } catch {
-    | _ => initialValue
+    | _ => defaultTheme
     }
   })
 
-  let setValue = value => {
+  let setTheme = themeName => {
     try {
-      WebApi.LocalStorage.setItem(key, value)
-      ignore(setStoredValue(_prev => value))
+      localStorage->setItem(themeKey, themeName)
+      ignore(setStoredTheme(_prev => themeName))
     } catch {
     | Js.Exn.Error(e) =>
       switch Js.Exn.message(e) {
@@ -25,5 +26,5 @@ let useTheme = (key: string, initialValue: string) => {
     }
   }
 
-  (storedValue, setValue)
+  (storedTheme, setTheme)
 }
