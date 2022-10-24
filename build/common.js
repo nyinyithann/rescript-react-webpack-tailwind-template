@@ -7,36 +7,15 @@ const CopyPlugin = require('copy-webpack-plugin');
 const isProductionMode = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: {
-    main: path.resolve(__dirname, '..', './src/index.js'),
-  },
+  entry: path.resolve(__dirname, '..', './src/index.js'),
   output: {
-    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, '..', './dist'),
-  },
-  optimization: {
-    moduleIds: 'deterministic',
-    runtimeChunk: 'single',
-    splitChunks: {
-      chunks: 'all',
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            // get the name. E.g. node_modules/packageName/not/this/part.js
-            // or node_modules/packageName
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
-
-            // npm package names are URL-safe, but some servers don't like @ symbols
-            return `npm.${packageName.replace('@', '')}`;
-          },
-        },
-      },
-    },
+    clean: true,
+    filename: isProductionMode ? '[name].[contenthash].bundle.js' : '[name].js',
+    chunkFilename: '[name].[contenthash].bundle.js',
+    assetModuleFilename: isProductionMode
+      ? 'asset/[name].[ext]?[hash]'
+      : '[name].[ext]',
   },
 
   module: {
@@ -99,7 +78,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
-      title: 'ReScript-React TailwindCSS Template',
+      title: 'ReScript React Template',
       favicon: path.resolve(__dirname, '..', './public/favicon.ico'),
       template: path.resolve(__dirname, '..', './public/index.html'),
       hash: true,
@@ -115,6 +94,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, '..', './public/manifest.json'),
           to: path.resolve(__dirname, '..', './dist/manifest.json'),
+        },
+        {
+          from: path.resolve(__dirname, '..', './public/robots.txt'),
+          to: path.resolve(__dirname, '..', './dist/robots.txt'),
         },
       ],
     }),

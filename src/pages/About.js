@@ -7,48 +7,48 @@ function string(prim) {
 }
 
 function About$AuthorLink(Props) {
-  var link = Props.link;
-  var site = Props.site;
-  var title = Props.title;
+  const {link} = Props;
+  const {site} = Props;
+  const {title} = Props;
   return React.createElement("div", undefined, React.createElement("span", {
-                  className: "text-primary_600"
-                }, site + ":"), React.createElement("a", {
-                  className: "underline hover:cursor-pointer hover:text-primary_600 text-primary_400 pl-2",
+                  className: "text-600 font-general"
+                }, `${  site  }:`), React.createElement("a", {
+                  className: "hover:cursor-pointer hover:text-600 text-400 pl-2",
                   href: link,
                   target: "blank"
                 }, title));
 }
 
-var AuthorLink = {
+const AuthorLink = {
   make: About$AuthorLink
 };
 
 function About(Props) {
   return React.createElement("div", {
-              className: "flex flex-col gap-2 text-primary_600 font-primary text-center h-full items-center justify-center"
+              className: "flex flex-col gap-2 text-600 font-sans text-center h-full items-center justify-center dark:text-slate-100"
             }, React.createElement("div", {
                   className: "-mt-40"
                 }, React.createElement("h1", {
                       className: "text-base md:text-2xl font-bold pt-4"
-                    }, "ReScript React Webpack template with TailwindCSS"), React.createElement("div", {
+                    }, "ReScript React template with Webpack and TailwindCSS"), React.createElement("div", {
                       className: "pt-4"
                     }, React.createElement("a", {
-                          className: "text-primary_800 underline text-base md:text:xl text-center inline",
+                          className: "text-800 underline text-base md:text:xl text-center inline",
                           href: "https://github.com/nyinyithann/rescript-react-webpack-tailwind-template",
                           rel: "noreferrer",
                           target: "_blank"
                         }, "GitHub Repo")), React.createElement("div", {
-                      className: "pt-2 font-secondary text-base"
+                      className: "pt-2 text-base"
                     }, React.createElement("div", {
-                          className: "flex flex-col justify-center items-center font-normal  mt-4 pt-2 border-t border-primary_200 dark:border-slate-400"
+                          className: "flex flex-col justify-center items-center font-normal  mt-4 pt-2 border-t border-200 dark:border-slate-400"
                         }, React.createElement("div", {
                               className: "w-24 h-24 relative"
                             }, React.createElement("img", {
-                                  className: "w-full h-full rounded-full border-4 border-primary_300",
+                                  className: "w-full h-full rounded-full border-4 border-300",
                                   alt: "mygithub",
                                   src: "https://avatars.githubusercontent.com/u/156037"
                                 }), React.createElement("span", {
-                                  className: "bg-primary_900 rounded-full text-xs text-primary_200 p-1 absolute right-1 -top-1 border-2 border-primary_300 dark:bg-slate-500 dark:text-white"
+                                  className: "bg-900 rounded-full text-xs text-200 p-1 absolute right-1 -top-1 border-2 border-300 dark:bg-slate-500 dark:text-white"
                                 }, "By")), React.createElement(About$AuthorLink, {
                               link: "https://github.com/nyinyithann",
                               site: "GitHub",
@@ -64,12 +64,11 @@ function About(Props) {
                             })))));
 }
 
-var make = About;
+const make = About;
 
 export {
-  string ,
   AuthorLink ,
   make ,
-  
+  string ,
 }
 /* react Not a pure module */

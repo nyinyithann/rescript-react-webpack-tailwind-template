@@ -1,5 +1,5 @@
 {
-  "name": "rescript-react-webpack-tailwind-template",
+  "name": "rescript-react-template",
   "namespace": false,
   "reason": {
     "react-jsx": 3
@@ -9,7 +9,9 @@
     "subdirs": true
   },
   "bsc-flags": [],
-  "warnings": { "error": "a" },
+  "warnings": {
+    "error": "a"
+  },
   "package-specs": [
     {
       "module": "es6",

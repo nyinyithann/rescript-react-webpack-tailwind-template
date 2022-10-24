@@ -1,5 +1,0 @@
--S  "ReScript Template Console"
-screen -t "rescript -- `C-a \` to quit" 0 yarn watch:res
-split
-focus down
-screen -t "webpack dev server -- `C-a \` to quit - `C-a Esc` to scroll" 1 yarn start

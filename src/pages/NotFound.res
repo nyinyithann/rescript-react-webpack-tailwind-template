@@ -16,7 +16,7 @@ let make = () => {
       {"Hmm... this page doesn't exist. Please go to the home page by clicking
         on the link below."->string}
     </span>
-    <p className="font-nav font-medium text-primary_900 underline cursor hover:text-primary_700">
+    <p className="font-nav font-medium text-900 underline cursor hover:text-700">
       <NavLink to="/"> {"Home"->string} </NavLink>
     </p>
   </div>

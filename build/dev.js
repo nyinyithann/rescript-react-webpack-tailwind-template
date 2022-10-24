@@ -15,14 +15,14 @@ module.exports = {
     host: '0.0.0.0',
     port: 8080,
     proxy: {
-      '/fetch': {
+      '/dev': {
         target: {
           host: '0.0.0.0',
           protocol: 'http:',
-          port: 5000,
+          port: 80,
         },
         pathRewrite: {
-          '^/fetch': '',
+          '^/dev': '',
         },
       },
     },

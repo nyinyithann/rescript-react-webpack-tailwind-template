@@ -2,18 +2,19 @@
 
 import * as React from "react";
 
+import * as Loading from "../components/Loading.js";
+
 function Home(Props) {
   return React.createElement("div", {
-              className: "flex flex-col justify-center items-center content-center\n    font-info text-base text-primary_600 py-10 text-center"
-            }, React.createElement("span", {
-                  className: "font-primary text-lg"
-                }, "Welcome to ReScript-React Webpack Template"));
+              className: "flex flex-col w-full h-full justify-center items-center font-title text-base text-600 py-10 text-center"
+            }, React.createElement("p", undefined, "Hello, World!"), React.createElement(Loading.make, {
+                  className: "w-[4rem] h-[3rem] stroke-[0.2rem] p-3 stroke-klor-200 text-700 dark:fill-slate-600 dark:stroke-slate-400 dark:text-900"
+                }));
 }
 
-var make = Home;
+const make = Home;
 
 export {
   make ,
-  
 }
 /* react Not a pure module */

@@ -1,12 +1,62 @@
+@import './_theme.css';
+@import './_fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './_theme.css';
-@import './_fonts.css';
+@layer utilities {
+	.scrollbar::-webkit-scrollbar {
+		width: 12px;
+	}
 
-@layer components {
-  .navbar-button {
-    @apply h-8 mx-1 px-2 rounded text-center transition-colors duration-200 text-primary_900 hover:cursor-pointer focus:outline-none hover:bg-primary_600 hover:text-primary_50;
-  }
+	.scrollbar::-webkit-scrollbar-track {
+		background: theme('backgroundColor.transparent');
+		border-radius: 100vh;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		background: theme('backgroundColor.transparent');
+		border-radius: 100vh;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		background: theme('backgroundColor.400');
+	}
+
+	.bs-scrollbar::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	.bs-scrollbar::-webkit-scrollbar-track {
+		background: theme('backgroundColor.200');
+		border-radius: 100vh;
+	}
+
+	.bs-scrollbar::-webkit-scrollbar-thumb {
+		background: theme('backgroundColor.300');
+		border-radius: 100vh;
+	}
+
+	.bs-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: theme('backgroundColor.400');
+	}
+
+	.dark-scrollbar::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	.dark-scrollbar::-webkit-scrollbar-track {
+		background: theme('colors.gray.600');
+		border-radius: 100vh;
+	}
+
+	.dark-scrollbar::-webkit-scrollbar-thumb {
+		background: theme('colors.gray.500');
+		border-radius: 100vh;
+	}
+
+	.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: theme('colors.gray.400');
+	}
 }
