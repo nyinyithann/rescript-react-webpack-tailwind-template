@@ -7,19 +7,19 @@ function string(prim) {
 }
 
 function About$AuthorLink(Props) {
-  const {link} = Props;
-  const {site} = Props;
-  const {title} = Props;
+  var link = Props.link;
+  var site = Props.site;
+  var title = Props.title;
   return React.createElement("div", undefined, React.createElement("span", {
                   className: "text-600 font-general"
-                }, `${  site  }:`), React.createElement("a", {
+                }, "" + site + ":"), React.createElement("a", {
                   className: "hover:cursor-pointer hover:text-600 text-400 pl-2",
                   href: link,
                   target: "blank"
                 }, title));
 }
 
-const AuthorLink = {
+var AuthorLink = {
   make: About$AuthorLink
 };
 
@@ -64,11 +64,11 @@ function About(Props) {
                             })))));
 }
 
-const make = About;
+var make = About;
 
 export {
+  string ,
   AuthorLink ,
   make ,
-  string ,
 }
 /* react Not a pure module */

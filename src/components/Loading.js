@@ -3,11 +3,11 @@
 import * as React from "react";
 
 function Loading(Props) {
-  const {className} = Props;
+  var className = Props.className;
   return React.createElement("div", {
               className: "flex w-full items-center justify-center"
             }, React.createElement("svg", {
-                  className,
+                  className: className,
                   fill: "none",
                   viewBox: "0 0 131 55"
                 }, React.createElement("defs", undefined, React.createElement("path", {
@@ -26,7 +26,7 @@ function Loading(Props) {
                     })));
 }
 
-const make = Loading;
+var make = Loading;
 
 export {
   make ,
