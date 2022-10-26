@@ -2,6 +2,10 @@
 
 Opinionated Boilerplate for ReScript-React with Webpack and TailwindCSS
 
+This template is based on
+- React 17
+- RescriptReact 0.10.3 (V3)
+
 [DEMO](https://rescript-react-webpack-tailwind-template.vercel.app/)
 
 ### Installation
