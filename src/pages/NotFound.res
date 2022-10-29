@@ -2,22 +2,18 @@ let {string} = module(React)
 
 @react.component
 let make = () => {
-  <div className="flex flex-col items-center pt-20 text-lg font-medium text-center text-slate-600">
-    <div className="w-full h-0 pb-40 relative">
-      <iframe
-        src="https://giphy.com/embed/0s4qt8wXIkI2S6nqqp"
-        width="100%"
-        height="100%"
-        className="absolute"
-      />
-    </div>
-    <p> <a href="https://giphy.com/gifs/thismorning-itv-this-morning-0s4qt8wXIkI2S6nqqp" /> </p>
-    <span className="my-5">
+  <div
+    className="w-full h-full flex flex-col items-center justify-center font-medium text-center text-slate-600 bg-50">
+    <span className="text-[10rem] md:text-[16rem] text-100"> {"404"->string} </span>
+    <span className="text-900 pb-5 text-[1.2rem] dark:text-slate-200">
       {"Hmm... this page doesn't exist. Please go to the home page by clicking
-        on the link below."->string}
+        the button below."->string}
     </span>
-    <p className="font-nav font-medium text-900 underline cursor hover:text-700">
-      <NavLink to="/"> {"Home"->string} </NavLink>
-    </p>
+    <button
+      type_="button"
+      className="font-nav font-medium text-900 text-[2rem] py-2 px-7 rounded-lg cursor hover:bg-400 bg-300 dark:text-slate-200 dark:bg-slate-600 dark:hover:bg-slate-700"
+      onClick={_ => RescriptReactRouter.push("/")}>
+      {"Home"->string}
+    </button>
   </div>
 }

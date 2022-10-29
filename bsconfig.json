@@ -1,23 +1,28 @@
 {
-  "name": "rescript-react-template",
-  "namespace": false,
-  "reason": {
-    "react-jsx": 3
-  },
-  "sources": {
-    "dir": "src",
-    "subdirs": true
-  },
-  "bsc-flags": [],
-  "warnings": {
-    "error": "a"
-  },
-  "package-specs": [
-    {
-      "module": "es6",
-      "in-source": true
-    }
-  ],
-  "suffix": ".js",
-  "bs-dependencies": ["@rescript/react", "rescript-heroicons"]
+    "name": "rescript-react-template",
+    "namespace": false,
+    "reason": {
+        "react-jsx": 3
+    },
+    "sources": {
+        "dir": "src",
+        "subdirs": true
+    },
+    "bsc-flags": [],
+    "warnings": {
+        "error": "a"
+    },
+    "package-specs": [
+        {
+            "module": "es6",
+            "in-source": true
+        }
+    ],
+    "suffix": ".js",
+    "bs-dependencies": [
+        "@rescript/react",
+        "rescript-heroicons",
+        "rescript-webapi",
+        "@glennsl/rescript-json-combinators"
+    ]
 }

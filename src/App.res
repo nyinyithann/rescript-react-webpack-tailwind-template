@@ -31,9 +31,11 @@ let make = () => {
 
   let (theme, setTheme) = ThemeHook.useTheme("theme-slate")
   <ThemeSwitchProvider value=setTheme>
-    <div className={j`$theme flex flex-col`}>
+    <div className={`${theme} flex flex-col`}>
       <NavBar />
-      <div className="py-20 bg-white h-screen dark:bg-slate-500"> {component} </div>
+      <ErrorBoundary>
+        <div className="h-screen bg-white dark:bg-slate-500"> {component} </div>
+      </ErrorBoundary>
     </div>
   </ThemeSwitchProvider>
 }

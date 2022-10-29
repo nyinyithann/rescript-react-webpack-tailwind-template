@@ -59,12 +59,14 @@
         "yarn-upgrade-all": "^0.7.1"
     },
     "dependencies": {
+        "@glennsl/rescript-json-combinators": "^1.0.0",
         "@headlessui/react": "^1.7.3",
         "@heroicons/react": "^1.0.5",
         "@rescript/react": "^0.10.3",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "rescript-heroicons": "^0.0.3"
+        "rescript-heroicons": "^0.0.3",
+        "rescript-webapi": "^0.6.1"
     },
     "scripts": {
         "dashboard": "webpack-dashboard -- webpack serve --config build/webpack.js --env env=dev addon=dashboard",

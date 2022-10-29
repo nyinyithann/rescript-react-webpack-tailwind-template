@@ -18,7 +18,7 @@ function NavLink(Props) {
   } else {
     path = "/";
   }
-  var baseStyle = "focus:outline-none h-8 rounded-sm hover:bg-400/60 dark:hover:bg-slate-500 mx-1 px-3 text-900";
+  var baseStyle = "focus:outline-none h-8 rounded-sm hover:bg-400/60 dark:hover:bg-slate-500 px-3 text-900";
   var className = path === to ? "" + baseStyle + " bg-400/60 dark:bg-slate-500" : baseStyle;
   return React.createElement("button", {
               className: className,
