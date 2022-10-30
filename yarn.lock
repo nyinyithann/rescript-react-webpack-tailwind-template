@@ -1031,6 +1031,13 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@glennsl/rescript-fetch@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@glennsl/rescript-fetch/-/rescript-fetch-0.1.4.tgz#18c4f27144454444a2c436d63496eb7f83215b21"
+  integrity sha512-XmCGt1r/iASpaJzuG1LnR8T+MVFolvmo2TI/xxreVjEWbxHRiym6VXLhhmIZrv3Xw1XitU+SHacroawzdsBOew==
+  dependencies:
+    "@ryyppy/rescript-promise" "^2.1.0"
+
 "@glennsl/rescript-json-combinators@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@glennsl/rescript-json-combinators/-/rescript-json-combinators-1.0.0.tgz#a9104597eab540cbaa184356c29fcf5e95dab7a0"
@@ -1338,6 +1345,11 @@
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.3.tgz#a2a8bed6b017940ec26c2154764b350f50348889"
   integrity sha512-Lf9rzrR3bQPKJjOK3PBRa/B3xrJ7CqQ1HYr9VHPVxJidarIJJFZBhj0Dg1uZURX+Wg/xiP0PHFxXmdj2bK8Vxw==
+
+"@ryyppy/rescript-promise@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@ryyppy/rescript-promise/-/rescript-promise-2.1.0.tgz#a33861274c41360cfbe872cf489f3dcb8dd526e6"
+  integrity sha512-+dW6msBrj2Lr2hbEMX+HoWCvN89qVjl94RwbYWJgHQuj8jm/izdPC0YzxgpGoEFdeAEW2sOozoLcYHxT6o5WXQ==
 
 "@sinclair/typebox@^0.24.1":
   version "0.24.48"
