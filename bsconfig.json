@@ -24,6 +24,7 @@
     "rescript-heroicons",
     "rescript-webapi",
     "@glennsl/rescript-json-combinators",
-    "@ryyppy/rescript-promise"
+    "@ryyppy/rescript-promise",
+    "@glennsl/rescript-fetch"
   ]
 }
