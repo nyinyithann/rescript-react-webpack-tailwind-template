@@ -10,6 +10,7 @@ module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
   output: {
     path: path.resolve(__dirname, '..', './dist'),
+    publicPath: '/',
     clean: true,
     filename: isProductionMode ? '[name].[contenthash].bundle.js' : '[name].js',
     chunkFilename: '[name].[contenthash].bundle.js',
@@ -40,7 +41,7 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
       {
-        test: /\.css$/i,
+        test: /\.(sass|scss|less|css)$/i,
         exclude: /node_modules/,
         use: [
           {
@@ -59,6 +60,9 @@ module.exports = {
             },
           },
           {
+            loader: 'sass-loader',
+          },
+          {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
@@ -72,7 +76,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
   },
 
   plugins: [
